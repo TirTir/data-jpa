@@ -18,6 +18,7 @@ public class MemberService {
     //회원가입
     @Transactional
     public Long join(Member member){
+
         validateDuplicateMember(member); //중복 회원 검증
         memberRepository.save(member);
         return member.getId();
@@ -31,6 +32,7 @@ public class MemberService {
     }
 
     //회원 전체 조회
+<<<<<<< HEAD
     public List<Member> findMembers(){
         return memberRepository.findAll();
     }
