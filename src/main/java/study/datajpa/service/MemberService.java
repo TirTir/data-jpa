@@ -11,9 +11,13 @@ import java.util.List;
 
 @Service
 @Transactional(readOnly = true)
-@RequiredArgsConstructor
 public class MemberService {
     private final MemberRepository memberRepository;
+
+    @Autowired
+    public MemberService(MemberRepository memberRepository){
+        this.memberRepository = memberRepository;
+    }
 
     //회원가입
     @Transactional
@@ -32,7 +36,6 @@ public class MemberService {
     }
 
     //회원 전체 조회
-<<<<<<< HEAD
     public List<Member> findMembers(){
         return memberRepository.findAll();
     }
